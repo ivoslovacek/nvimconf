@@ -16,11 +16,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("ivoslovacek.remap")
+require("ivoslovacek/remap")
 require("lazy").setup("ivoslovacek.plugins")
 require("nvim-tree").setup()
 require("nvim-web-devicons")
 require("catppuccin").setup({
 	flavour = "frappe"
 })
+
 vim.cmd.colorscheme("catppuccin-frappe")
