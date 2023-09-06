@@ -1,6 +1,12 @@
 vim.g.mapleader = " "
+
+-- buffer switching
+vim.keymap.set("n", "<Tab>", vim.cmd.bnext, {desc = "Switch to next buffer"})
+vim.keymap.set("n", "<S-Tab>", vim.cmd.bprevious, {desc = "Switch to previous buffer"})
+
 -- nvimtree
-vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeOpen)
+vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeFocus)
+vim.keymap.set("n", "<leader>pc", vim.cmd.NvimTreeClose)
 
 -- telescope
 vim.keymap.set('n', '<leader>ff', function() require('telescope.builtin').find_files() end, {})
