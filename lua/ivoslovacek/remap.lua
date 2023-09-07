@@ -1,8 +1,10 @@
 vim.g.mapleader = " "
 
--- buffer switching
-vim.keymap.set("n", "<Tab>", vim.cmd.bnext, { desc = "Switch to next buffer" })
-vim.keymap.set("n", "<S-Tab>", vim.cmd.bprevious, { desc = "Switch to previous buffer" })
+-- buffer switching using barbar
+local opts = { noremap = true, silent = true }
+vim.keymap.set("n", "<Tab>", "<Cmd>BufferNext<CR>", { desc = "Switch to next buffer" })
+vim.keymap.set("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>", { desc = "Switch to previous buffer" })
+vim.keymap.set("n", "<leader>bw", "<Cmd>BufferClose<CR>", opts, { desc = "Close current buffer" })
 
 -- moving text in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected text up a line" })
