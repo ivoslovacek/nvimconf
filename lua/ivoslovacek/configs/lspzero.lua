@@ -35,6 +35,7 @@ lsp.format_on_save({
     },
     servers = {
         ['lua_ls'] = { 'lua' },
+        ['clangd'] = { 'c', 'cpp' },
     }
 })
 
@@ -42,5 +43,6 @@ lsp.format_on_save({
 
 -- (Optional) Configure lua language server for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+require('lspconfig').clangd.setup({})
 
 lsp.setup()
