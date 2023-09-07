@@ -22,4 +22,5 @@ require("ivoslovacek.configs.lspzero")
 require("catppuccin").setup({
     flavour = "frappe"
 })
+require("autoclose").setup()
 vim.cmd.colorscheme("catppuccin-frappe")
