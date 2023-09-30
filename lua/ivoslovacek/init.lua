@@ -18,9 +18,10 @@ require("lazy").setup("ivoslovacek.plugins")
 require("nvim-web-devicons")
 require("ivoslovacek.configs.lualine")
 require("ivoslovacek.configs.lspzero")
+require("autoclose").setup()
+
 -- load colorscheme
 require("catppuccin").setup({
     flavour = "frappe"
 })
-require("autoclose").setup()
 vim.cmd.colorscheme("catppuccin-frappe")
