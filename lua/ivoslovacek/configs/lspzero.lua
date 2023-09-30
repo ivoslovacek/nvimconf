@@ -1,5 +1,12 @@
 local lsp = require('lsp-zero').preset({})
 
+lsp.preset("recommended")
+
+lsp.ensure_installed({
+    'clangd',
+    'lua_ls',
+})
+
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -16,6 +23,9 @@ lsp.setup_nvim_cmp({
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
+    lsp.default_keymaps({ buffer = bufnr })
+    lsp.buffer_autoformat()
+
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
     vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
@@ -28,21 +38,21 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
-lsp.format_on_save({
-    format_opts = {
-        async = false,
-        timeout_ms = 10000,
-    },
-    servers = {
-        ['lua_ls'] = { 'lua' },
-        ['clangd'] = { 'c', 'cpp' },
-    }
-})
-
-
+--lsp.format_on_save({
+--  format_opts = {
+--       async = false,
+--   timeout_ms = 10000,
+--},
+--servers = {
+--     ['lua_ls'] = { 'lua' },
+--      ['clangd'] = { 'c', 'cpp', 'cs' },
+--       ['rust_analyzer'] = { 'rust' },
+--    }
+--})
 
 -- (Optional) Configure lua language server for neovim
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-require('lspconfig').clangd.setup({})
+local nvim_lsp = require('lspconfig')
+
+nvim_lsp.lua_ls.setup(lsp.nvim_lua_ls())
 
 lsp.setup()
