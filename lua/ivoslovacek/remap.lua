@@ -25,3 +25,6 @@ vim.keymap.set('n', '<leader>ff', function() require('telescope.builtin').find_f
 vim.keymap.set('n', '<leader>fg', function() require('telescope.builtin').live_grep() end, {})
 vim.keymap.set('n', '<leader>fb', function() require('telescope.builtin').buffers() end, {})
 vim.keymap.set('n', '<leader>fh', function() require('telescope.builtin').help_tags() end, {})
+
+-- gitblame
+vim.keymap.set('n', '<leader>bl', '<cmd>ToggleBlame virtual<CR>', { desc = "Toggle git blame visibility" })
