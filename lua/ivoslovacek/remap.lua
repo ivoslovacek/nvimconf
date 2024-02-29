@@ -21,10 +21,12 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeFocus, { desc = "Open and focu
 vim.keymap.set("n", "<leader>pc", vim.cmd.NvimTreeClose, { desc = "Close NvimTree" })
 
 -- telescope
-vim.keymap.set('n', '<leader>ff', function() require('telescope.builtin').find_files() end, {})
-vim.keymap.set('n', '<leader>fg', function() require('telescope.builtin').live_grep() end, {})
-vim.keymap.set('n', '<leader>fb', function() require('telescope.builtin').buffers() end, {})
-vim.keymap.set('n', '<leader>fh', function() require('telescope.builtin').help_tags() end, {})
+vim.keymap.set('n', '<leader>ff', function() require('telescope.builtin').find_files() end,
+    { desc = "Find files in working directory" })
+vim.keymap.set('n', '<leader>fg', function() require('telescope.builtin').live_grep() end,
+    { desc = "Grep from files in working directory" })
+vim.keymap.set('n', '<leader>fb', function() require('telescope.builtin').buffers() end, { desc = "Find opened buffers" })
+vim.keymap.set('n', '<leader>fh', function() require('telescope.builtin').help_tags() end, { desc = "Browse help" })
 
 -- gitblame
 vim.keymap.set('n', '<leader>bl', '<cmd>ToggleBlame virtual<CR>', { desc = "Toggle git blame visibility" })
