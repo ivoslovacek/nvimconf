@@ -19,6 +19,7 @@ require("nvim-web-devicons")
 require("ivoslovacek.configs.lualine")
 require("ivoslovacek.configs.lspzero")
 require("autoclose").setup()
+require("oil").setup()
 
 -- load colorscheme
 require("catppuccin").setup({

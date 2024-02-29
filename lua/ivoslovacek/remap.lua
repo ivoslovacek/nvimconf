@@ -28,3 +28,6 @@ vim.keymap.set('n', '<leader>fh', function() require('telescope.builtin').help_t
 
 -- gitblame
 vim.keymap.set('n', '<leader>bl', '<cmd>ToggleBlame virtual<CR>', { desc = "Toggle git blame visibility" })
+
+--  oil
+vim.keymap.set("n", "<leader>e", "<CMD>Oil --float<CR>", { desc = "Browse files" })
