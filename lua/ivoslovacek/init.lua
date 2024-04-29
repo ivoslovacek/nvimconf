@@ -22,10 +22,10 @@ require("autoclose").setup()
 require("oil").setup()
 
 -- load colorscheme
-require("catppuccin").setup({
-    flavour = "frappe"
-})
-vim.cmd.colorscheme("catppuccin-frappe")
+vim.g.gruvbox_contrast_dark = "hard"
+vim.g.gruvbox_contrast_light = "hard"
+vim.g.gruvbox_invert_selection = 0
+vim.cmd("colorscheme gruvbox")
 
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
