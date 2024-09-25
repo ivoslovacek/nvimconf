@@ -29,7 +29,7 @@ vim.keymap.set('n', '<leader>fb', function() require('telescope.builtin').buffer
 vim.keymap.set('n', '<leader>fh', function() require('telescope.builtin').help_tags() end, { desc = "Browse help" })
 
 -- gitblame
-vim.keymap.set('n', '<leader>bl', '<cmd>ToggleBlame virtual<CR>', { desc = "Toggle git blame visibility" })
+vim.keymap.set('n', '<leader>bl', '<cmd>BlameToggle virtual<CR>', { desc = "Toggle git blame visibility" })
 
 --  oil
 vim.keymap.set("n", "<leader>e", "<CMD>Oil --float<CR>", { desc = "Browse files" })
